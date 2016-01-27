@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Awesome Window Manager &middot; tomashley ">
+        <meta property="og:site_name" content="tomashley"/>
+        <meta property="og:description" content="Technically, a blog">
+        <meta property="og:url" content="http://tomashley.github.io/2016/01/27/awesomewm/" />
+        <meta property="og:locale" content="en-gb">
+        <meta name="author" content="Tom Ashley">
+        <meta name="description" content="Technically, a blog">
+        <meta name="keywords" content="awesomewm">
+        <meta name="generator" content="Hugo 0.15" />
+        <link rel="icon" href="http://tomashley.github.io/assets/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-base.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-color-schemes.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/font-awesome-4.5.0.min.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/highlight-9.0.0-default.min.css">
+        <title>
+            
+                Awesome Window Manager &middot; tomashley
+            
+        </title>
+    </head>
+    <body class="color-scheme-green">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul><li><a href="http://tomashley.github.io/">home</a></li><li><a href="http://tomashley.github.io/about/">about</a></li></ul>
+                </nav>
+                
+                    <h1 class="title">Awesome Window Manager</h1>
+                    <aside>
+                        <p>on <strong>Wed, Jan 27, 2016</strong></p>
+                    </aside>
+                
+            </header>
+<article class="article-content">
+    
+
+<h1 id="kanji:6d9d7cd33607228b1da0364ee73d0c7e">Kanji</h1>
+
+<p>When people look over my shoulder, or do some work with me on my laptop, I am always asked about the Japanese/Chinese pictograms on the top left of my screen:</p>
+
+<p align=center>
+<img src=/images/awesome_desktops.png>
+<br />Kanji
+</p>
+
+<p>These are the 10 workspaces I have available to me. I had to do a little research on them, and I think they are Chinese or Japanese number characters.</p>
+
+<p><a href="https://en.wiktionary.org/wiki/%E4%B9%9D">九</a> - for example is Chinese Number 9, or Japanese Kanji 9</p>
+
+<p>The reason I don&rsquo;t know what they are, is because I copied them from someone else&rsquo;s <code>rc.lua</code> for AwesomeWM. What I will say though, is that they look better than the English numbers 0-9.</p>
+
+<h1 id="a-brief-history:6d9d7cd33607228b1da0364ee73d0c7e">A Brief History</h1>
+
+<p>About 10 years ago, I was getting dispirited with all Desktop Environments (DE) and Window Managers (WM). I&rsquo;d fully flipped from dual booting with Windows and made Linux take over my entire machine. This was around the time Gnome was moving from v2 to v3, if I remember correctly, and I was none too impressed with their excessive use of Compiz and losing the &lsquo;traditional&rsquo; start menu bar. Basically, things were changing and I didn&rsquo;t like it. Also, KDE was never my bag; GTK has always looked better to me than Qt.</p>
+
+<p>So, I was looking for a decent UI to work on. I wanted it to be lightweight with the ability to run VMware for a Windows virtual machine (I was tied into Outlook and some other Microsoft tools). XFCE and LXDE kept popping up. I tried them both, but neither ever felt quite right. I think I stopped on LXDE the longest. I even tried out Enlightenment 17 and 18!</p>
+
+<p>Xmonad was getting a lot of attention on ArchLinux and looked like fun. I tried it and I failed to make anything decent. It was beyond my capabilities.</p>
+
+<p>So then I get a new Ops gig with some guys who know what they are doing. I try and stick at Xmond for a bit, and then one of them passed me their <code>rc.lua</code> for Awesome, told me the basic shortcuts to jump windows, re-tile and switch workspaces. Suddenly things made sense and I persevered.</p>
+
+<h1 id="tiling:6d9d7cd33607228b1da0364ee73d0c7e">Tiling</h1>
+
+<p>AwesomeWM is a tiling window manager. It is not like your usual desktop environment. There are no integrations out of the box and the default config is rather basic.</p>
+
+<p>What AwesomeWM does, which makes it so productive, is it allows you to make the best use of your available screen estate, whilst allowing you to not need your mouse to jump around windows.</p>
+
+<p>I use the mouse more than I should for this window manager, but, one key productivity feature is the ability to run quite a few terminal sessions on one workspace and have them arranged in equal sizes.</p>
+
+<p>I currently have 13 different ways of arranging windows, from vertical and horizontal splits, to floating and spirals.</p>
+
+
+<figure >
+    
+        <img src="http://tomashley.github.io/images/awesome_7windows.png" />
+    
+    
+    <figcaption>
+        <h4>Arranging 7 Windows</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>As you can see, laying out 7 windows, above, uses every inch of my screen apart from a small bar top and bottom to tell the time, which workspace I&rsquo;m on and a few system monitor bars.</p>
+
+<p>Your fingers rarely need to leave the keyboard when working with windows. Using the Mod4 keys and various vim-style key-bindings, jumping between windows is as simple as jumping workspaces.</p>
+
+<h1 id="keyboard-shortcuts:6d9d7cd33607228b1da0364ee73d0c7e">Keyboard Shortcuts</h1>
+
+<p>Mod4 is the key to all AwesomeWM key strokes. Often labelled as the &lsquo;Windows&rsquo; key on most keyboards, you can use <code>xev</code> to see the keycode your button makes:</p>
+
+<pre><code>KeyPress event, serial 33, synthetic NO, window 0x4c00001,
+    root 0xd7, subw 0x0, time 666921407, (880,314), root:(881,331),
+    state 0x10, keycode 133 (keysym 0xffeb, Super_L), same_screen YES,
+    XLookupString gives 0 bytes: 
+    XmbLookupString gives 0 bytes: 
+    XFilterEvent returns: False
+</code></pre>
+
+<p>This on my machine is the Super Left (Super_L) key used as a modifier (mod4)</p>
+
+<p>With that working, let&rsquo;s just go and list the really important keys that make moving around windows and workspaces easy. These are the ones I use most frequently</p>
+
+<pre><code>Mod4 + 1  - Switch to workspace 1. Replace 1 with 0-9 to hit up all workspaces
+Mod4 + j  - Jump to the next window
+Mod4 + k  - Jump to the previous window
+Mod4 + f  - set window fullscreen
+Mod4 + Return - Spawn a terminal emulator
+Mod4 + Space  - switch workspace layout
+Mod4 + Escape - Jump between workspace and previous workspace
+</code></pre>
+
+<h1 id="independent-desktops:6d9d7cd33607228b1da0364ee73d0c7e">Independent Desktops</h1>
+
+<p>One final feature that I often take for granted is the independence of workspaces. When adding an external monitor to your laptop, or simply having two screens on your workspace, AwesomeWM treats both screen separately so you effectively double your number of workspaces!</p>
+
+<p>Where on one you have 10, add another screen, get another 10 workspaces.</p>
+
+<p>As you switch between them with your <code>Mod4+{0..9}</code> the left screen switches and the right one doesn&rsquo;t. Move to the right screen and set it workspace 5 and the left one doesn&rsquo;t change.</p>
+
+<h1 id="in-summary:6d9d7cd33607228b1da0364ee73d0c7e">In Summary</h1>
+
+<p>From my twitter feed, I see many proponents of the i3 window manager as some people reject OSX as their work horses (well done!). I have not used i3 yet, and don&rsquo;t fully know it&rsquo;s capabilities. I should take a look and see if it offers anything over AwesomeWM.</p>
+
+<p>I&rsquo;ve now been using AwesomeWM for so long, using anything else becomes painful and difficult. It makes me productive; I can have things open across 10 workspaces, switch to them quickly, tile windows side by side for comparison or quickly full screen a terminal session to zoom in.</p>
+
+</article>
+        </div>
+        <footer>
+            <p>Copyright 2013 - 2016 &copy; Tom Ashley</p>
+        </footer>
+        <script src="http://tomashley.github.io/js/highlight-9.0.0.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-42095920-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+    </body>
+</html>

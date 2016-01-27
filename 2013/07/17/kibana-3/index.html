@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Kibana 3 &middot; tomashley ">
+        <meta property="og:site_name" content="tomashley"/>
+        <meta property="og:description" content="Latest Logstash dashboard">
+        <meta property="og:url" content="http://tomashley.github.io/2013/07/17/kibana-3/" />
+        <meta property="og:locale" content="en-gb">
+        <meta name="author" content="Tom Ashley">
+        <meta name="description" content="Latest Logstash dashboard">
+        <meta name="keywords" content="kibana, logstash">
+        <meta name="generator" content="Hugo 0.15" />
+        <link rel="icon" href="http://tomashley.github.io/assets/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-base.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-color-schemes.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/font-awesome-4.5.0.min.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/highlight-9.0.0-default.min.css">
+        <title>
+            
+                Kibana 3 &middot; tomashley
+            
+        </title>
+    </head>
+    <body class="color-scheme-green">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul><li><a href="http://tomashley.github.io/">home</a></li><li><a href="http://tomashley.github.io/about/">about</a></li></ul>
+                </nav>
+                
+                    <h1 class="title">Kibana 3</h1>
+                    <aside>
+                        <p>on <strong>Wed, Jul 17, 2013</strong></p>
+                    </aside>
+                
+            </header>
+<article class="article-content">
+    <p>Tonight I finally got my first preview of a working Kibana 3.</p>
+
+<p>I tried running up a Vagrant box using the new <a href="https://github.com/lusis/chef-kibana">Kibana 3 Chef cookbook</a> from Lusis</p>
+
+<p>The issue with this was I forwarded port 80 in VirtualBox to 8080 on my Host.
+I&rsquo;m not sure whether Nginx or the Angular code in Kibana was dropping the port, but I could not list the _aliases route to proxied Elasticsearch because the port was dropping.</p>
+
+<p>To get it to work I was forced to proxy Elasticsearch from my host on port 80.</p>
+
+<p>It was a hack job, but gave me the preview I needed. Kibana 3 looks awesome, so I will now move it into production!</p>
+
+</article>
+        </div>
+        <footer>
+            <p>Copyright 2013 - 2016 &copy; Tom Ashley</p>
+        </footer>
+        <script src="http://tomashley.github.io/js/highlight-9.0.0.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-42095920-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+    </body>
+</html>

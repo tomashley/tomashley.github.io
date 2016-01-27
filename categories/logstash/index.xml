@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logstash on tomashley</title>
+    <link>http://tomashley.github.io/categories/logstash/</link>
+    <description>Recent content in Logstash on tomashley</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 18 Jul 2013 14:06:31 +0000</lastBuildDate>
+    <atom:link href="http://tomashley.github.io/categories/logstash/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Logstash @types and Beaver</title>
+      <link>http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/</link>
+      <pubDate>Thu, 18 Jul 2013 14:06:31 +0000</pubDate>
+      
+      <guid>http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/</guid>
+      <description>
+
+&lt;p&gt;Something I came across last night has tripped me up a few times and I hadn&amp;rsquo;t really noticed because I&amp;rsquo;d never really dived into it.&lt;/p&gt;
+
+&lt;h3 id=&#34;brief-overview:a0487b70816355145b14edf0874c875a&#34;&gt;Brief overview&lt;/h3&gt;
+
+&lt;p&gt;My setup at the moment consists of two &lt;a href=&#34;logstash.net&#34;&gt;Logstash&lt;/a&gt; servers. One receives logs from my production nodes and one from my development environments. Logs are shipped via &lt;a href=&#34;https://github.com/josegonzalez/beaver&#34;&gt;Beaver&lt;/a&gt; to a Redis queue. They do share the same Elasticsearch cluster, but I separate them here by putting them in different indexes.&lt;/p&gt;
+
+&lt;p&gt;Initially, when I started out using Kibana (v2 on Ruby) I had single node all encompassing redis/logstash/elasticsearch. So when I grew up and got an ES cluster, I pushed the logs to separate indexes and it stuck.&lt;/p&gt;
+
+&lt;p&gt;Development is very transient and nodes and environment names change rapidly during development and QA cycles, so splitting the environments makes sense splitting out prod to a separate Logstash process.&lt;/p&gt;
+
+&lt;p&gt;I am also able to test new groks, filters and mutations without affecting production collection.&lt;/p&gt;
+
+&lt;h3 id=&#34;so-to-types:a0487b70816355145b14edf0874c875a&#34;&gt;So to @types&lt;/h3&gt;
+
+&lt;p&gt;We are developing some new capabilities in my workplace and that means a new environment, with a new software stack.&lt;/p&gt;
+
+&lt;p&gt;I want to split the logs from this new stack into their own Elasticsearch Index, but I don&amp;rsquo;t much want to run up another Logstash server, so I&amp;rsquo;m reusing my development instance.&lt;/p&gt;
+
+&lt;p&gt;Trying to be clever, and knowing the Redis input takes a &amp;lsquo;type&amp;rsquo; field, I&amp;rsquo;ve decided to ship logs to a different list name on Redis and placing these logs under a different @type.&lt;/p&gt;
+
+&lt;p&gt;Great.&lt;/p&gt;
+
+&lt;p&gt;Or not.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://logstash.net/docs/1.1.13/inputs/redis&#34;&gt;Logstash docs for Redis&lt;/a&gt; state:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you try to set a type on an event that already has one (for example when you send an event from a shipper to an indexer) then a new input will not override the existing type. A type set at the shipper stays with that event for its life even when sent to another LogStash server.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Well at the Beaver end I&amp;rsquo;m not actually setting a type before I ship.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-big-reveal:a0487b70816355145b14edf0874c875a&#34;&gt;The big reveal&lt;/h3&gt;
+
+&lt;p&gt;Some well placed tcpdumping to watch what was leaving the node reveals that Beaver was setting a tag - &amp;lsquo;file&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;So now, so long as I ensure I set the @type in my Beaver config file, the type will propogate.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

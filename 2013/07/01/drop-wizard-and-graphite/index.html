@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="DropWizard and Graphite &middot; tomashley ">
+        <meta property="og:site_name" content="tomashley"/>
+        <meta property="og:description" content="Collecting java metrics and pushing them into graphite">
+        <meta property="og:url" content="http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/" />
+        <meta property="og:locale" content="en-gb">
+        <meta name="author" content="Tom Ashley">
+        <meta name="description" content="Collecting java metrics and pushing them into graphite">
+        <meta name="keywords" content="graphite, metrics">
+        <meta name="generator" content="Hugo 0.15" />
+        <link rel="icon" href="http://tomashley.github.io/assets/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-base.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-color-schemes.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/font-awesome-4.5.0.min.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/highlight-9.0.0-default.min.css">
+        <title>
+            
+                DropWizard and Graphite &middot; tomashley
+            
+        </title>
+    </head>
+    <body class="color-scheme-green">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul><li><a href="http://tomashley.github.io/">home</a></li><li><a href="http://tomashley.github.io/about/">about</a></li></ul>
+                </nav>
+                
+                    <h1 class="title">DropWizard and Graphite</h1>
+                    <aside>
+                        <p>on <strong>Mon, Jul 01, 2013</strong></p>
+                    </aside>
+                
+            </header>
+<article class="article-content">
+    
+
+<p>I&rsquo;m working on a new project at work, and we seem to have fallen on <a href="http://dropwizard.codahale.com/">DropWizard</a> as the back-end of choice for building our service.</p>
+
+<p>This is very nice, because it affords a metrics service as a viewport into the embedded Jetty engine and with various JVM metrics and the ability to time and count individual Java methods.</p>
+
+<p>I have written a metrics scraper that pulls the DropWizard JSON metrics, flattens them and pushes them up into Graphite.</p>
+
+<p>There are many <a href="http://graphite.wikidot.com/">Graphite</a> front-ends out there, and I have tried a few. None quite fit my bill, and almost all need an amount of manual customisation I&rsquo;m uncomfortable with. I&rsquo;d like more automation.
+I know this is quite hard as everyone has different metrics and different paths under which they are stored.</p>
+
+<p>My other bug-bear is that most are written in Ruby. I do like ruby for certain tasks, but I am not a fan of Gems and the version mismatches I always stumble on when I write on a laptop with Ruby 2+ and have to back-port for a CentOS server on 1.8.7!</p>
+
+<p><a href="http://www.opscode.com/">Opscode</a> have done brilliant things with Chef Omnibus to overcome such annoyances.</p>
+
+<h3 id="python:7aa9a79982d80df5ac2a5131a833fb48">Python</h3>
+
+<p>So my plan is to try and knock up something a little more custom for myself using Flask as a caching server to Graphite&rsquo;s list of JSON metrics, and attempt a cubism.js style graphing front-end.</p>
+
+<p>Let&rsquo;s see how I get on!</p>
+
+</article>
+        </div>
+        <footer>
+            <p>Copyright 2013 - 2016 &copy; Tom Ashley</p>
+        </footer>
+        <script src="http://tomashley.github.io/js/highlight-9.0.0.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-42095920-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+    </body>
+</html>

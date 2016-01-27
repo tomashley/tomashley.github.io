@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="tomashley">
+        <meta property="og:site_name" content="tomashley"/>
+        <meta property="og:description" content="Technically, a blog">
+        <meta property="og:url" content="http://tomashley.github.io/" />
+        <meta property="og:locale" content="en-gb">
+        <meta name="author" content="Tom Ashley">
+        <meta name="description" content="Technically, a blog">
+        <meta name="keywords" content="default,page,keywords">
+        <meta name="generator" content="Hugo 0.15" />
+        <link rel="icon" href="http://tomashley.github.io/assets/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-base.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-color-schemes.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/font-awesome-4.5.0.min.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/highlight-9.0.0-default.min.css">
+        <title>
+            
+                tomashley
+            
+        </title>
+    </head>
+    <body class="color-scheme-green">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul><li><a href="http://tomashley.github.io/">home</a></li><li><a href="http://tomashley.github.io/about/">about</a></li></ul>
+                </nav>
+                
+                    <h1 class="brand">tomashley</h1>
+                    <aside>
+                        <p>Building blocks, not pouring concrete</p>
+                        <p>
+                            <a href="https://github.com/tomashley"><i class="fa fa-github"></i></a>
+                            <a href="mailto:tom.ashley&#43;githubio@gmail.com"><i class="fa fa-envelope"></i></a>
+                            <a href="https://twitter.com/vimclaw"><i class="fa fa-twitter"></i></a>
+                            
+                            
+                            
+                            
+                        </p>
+                    </aside>
+                
+            </header>
+<section id="article-listing">
+    
+    
+    <article>
+        <h1 class="article-title"><a href="http://tomashley.github.io/2016/01/27/awesomewm/">Awesome Window Manager</a></h1>
+        <p class="article-info">
+            on <strong>Wed, Jan 27, 2016</strong> by <strong>Tom Ashley</strong> &middot; <strong>5 min reading time</strong>
+        </p>
+        <p class="article-summary">Kanji When people look over my shoulder, or do some work with me on my laptop, I am always asked about the Japanese/Chinese pictograms on the top left of my screen: Kanji These are the 10 workspaces I have available to me. I had to do a little research on them, and I think they are Chinese or Japanese number characters. 九 - for example is Chinese Number 9, or Japanese Kanji 9 The reason I don&rsquo;t know what they are, is because I copied them from someone else&rsquo;s rc.lua for AwesomeWM.</p>
+        <a href="http://tomashley.github.io/2016/01/27/awesomewm/"><p class="article-read-more"><a href="http://tomashley.github.io/2016/01/27/awesomewm/">Read more &rarr;</a></p>
+    </article>
+    
+    <article>
+        <h1 class="article-title"><a href="http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/">Logstash @types and Beaver</a></h1>
+        <p class="article-info">
+            on <strong>Thu, Jul 18, 2013</strong> by <strong>Tom Ashley</strong> &middot; <strong>2 min reading time</strong>
+        </p>
+        <p class="article-summary">Something I came across last night has tripped me up a few times and I hadn&rsquo;t really noticed because I&rsquo;d never really dived into it. Brief overview My setup at the moment consists of two Logstash servers. One receives logs from my production nodes and one from my development environments. Logs are shipped via Beaver to a Redis queue. They do share the same Elasticsearch cluster, but I separate them here by putting them in different indexes.</p>
+        <a href="http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/"><p class="article-read-more"><a href="http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/">Read more &rarr;</a></p>
+    </article>
+    
+    <article>
+        <h1 class="article-title"><a href="http://tomashley.github.io/2013/07/17/kibana-3/">Kibana 3</a></h1>
+        <p class="article-info">
+            on <strong>Wed, Jul 17, 2013</strong> by <strong>Tom Ashley</strong> &middot; <strong>1 min reading time</strong>
+        </p>
+        <p class="article-summary">Tonight I finally got my first preview of a working Kibana 3. I tried running up a Vagrant box using the new Kibana 3 Chef cookbook from Lusis The issue with this was I forwarded port 80 in VirtualBox to 8080 on my Host. I&rsquo;m not sure whether Nginx or the Angular code in Kibana was dropping the port, but I could not list the _aliases route to proxied Elasticsearch because the port was dropping.</p>
+        <a href="http://tomashley.github.io/2013/07/17/kibana-3/"><p class="article-read-more"><a href="http://tomashley.github.io/2013/07/17/kibana-3/">Read more &rarr;</a></p>
+    </article>
+    
+    <article>
+        <h1 class="article-title"><a href="http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/">DropWizard and Graphite</a></h1>
+        <p class="article-info">
+            on <strong>Mon, Jul 01, 2013</strong> by <strong>Tom Ashley</strong> &middot; <strong>2 min reading time</strong>
+        </p>
+        <p class="article-summary">I&rsquo;m working on a new project at work, and we seem to have fallen on DropWizard as the back-end of choice for building our service. This is very nice, because it affords a metrics service as a viewport into the embedded Jetty engine and with various JVM metrics and the ability to time and count individual Java methods. I have written a metrics scraper that pulls the DropWizard JSON metrics, flattens them and pushes them up into Graphite.</p>
+        <a href="http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/"><p class="article-read-more"><a href="http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/">Read more &rarr;</a></p>
+    </article>
+    
+    
+    
+</section>
+        </div>
+        <footer>
+            <p>Copyright 2013 - 2016 &copy; Tom Ashley</p>
+        </footer>
+        <script src="http://tomashley.github.io/js/highlight-9.0.0.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-42095920-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Logstash @types and Beaver &middot; tomashley ">
+        <meta property="og:site_name" content="tomashley"/>
+        <meta property="og:description" content="Logstash discoveries">
+        <meta property="og:url" content="http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/" />
+        <meta property="og:locale" content="en-gb">
+        <meta name="author" content="Tom Ashley">
+        <meta name="description" content="Logstash discoveries">
+        <meta name="keywords" content="beaver, logstash">
+        <meta name="generator" content="Hugo 0.15" />
+        <link rel="icon" href="http://tomashley.github.io/assets/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-base.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/slender-color-schemes.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/font-awesome-4.5.0.min.css">
+        <link rel="stylesheet" href="http://tomashley.github.io/css/highlight-9.0.0-default.min.css">
+        <title>
+            
+                Logstash @types and Beaver &middot; tomashley
+            
+        </title>
+    </head>
+    <body class="color-scheme-green">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul><li><a href="http://tomashley.github.io/">home</a></li><li><a href="http://tomashley.github.io/about/">about</a></li></ul>
+                </nav>
+                
+                    <h1 class="title">Logstash @types and Beaver</h1>
+                    <aside>
+                        <p>on <strong>Thu, Jul 18, 2013</strong></p>
+                    </aside>
+                
+            </header>
+<article class="article-content">
+    
+
+<p>Something I came across last night has tripped me up a few times and I hadn&rsquo;t really noticed because I&rsquo;d never really dived into it.</p>
+
+<h3 id="brief-overview:a0487b70816355145b14edf0874c875a">Brief overview</h3>
+
+<p>My setup at the moment consists of two <a href="logstash.net">Logstash</a> servers. One receives logs from my production nodes and one from my development environments. Logs are shipped via <a href="https://github.com/josegonzalez/beaver">Beaver</a> to a Redis queue. They do share the same Elasticsearch cluster, but I separate them here by putting them in different indexes.</p>
+
+<p>Initially, when I started out using Kibana (v2 on Ruby) I had single node all encompassing redis/logstash/elasticsearch. So when I grew up and got an ES cluster, I pushed the logs to separate indexes and it stuck.</p>
+
+<p>Development is very transient and nodes and environment names change rapidly during development and QA cycles, so splitting the environments makes sense splitting out prod to a separate Logstash process.</p>
+
+<p>I am also able to test new groks, filters and mutations without affecting production collection.</p>
+
+<h3 id="so-to-types:a0487b70816355145b14edf0874c875a">So to @types</h3>
+
+<p>We are developing some new capabilities in my workplace and that means a new environment, with a new software stack.</p>
+
+<p>I want to split the logs from this new stack into their own Elasticsearch Index, but I don&rsquo;t much want to run up another Logstash server, so I&rsquo;m reusing my development instance.</p>
+
+<p>Trying to be clever, and knowing the Redis input takes a &lsquo;type&rsquo; field, I&rsquo;ve decided to ship logs to a different list name on Redis and placing these logs under a different @type.</p>
+
+<p>Great.</p>
+
+<p>Or not.</p>
+
+<p>The <a href="http://logstash.net/docs/1.1.13/inputs/redis">Logstash docs for Redis</a> state:</p>
+
+<blockquote>
+<p>If you try to set a type on an event that already has one (for example when you send an event from a shipper to an indexer) then a new input will not override the existing type. A type set at the shipper stays with that event for its life even when sent to another LogStash server.</p>
+</blockquote>
+
+<p>Well at the Beaver end I&rsquo;m not actually setting a type before I ship.</p>
+
+<h3 id="the-big-reveal:a0487b70816355145b14edf0874c875a">The big reveal</h3>
+
+<p>Some well placed tcpdumping to watch what was leaving the node reveals that Beaver was setting a tag - &lsquo;file&rsquo;.</p>
+
+<p>So now, so long as I ensure I set the @type in my Beaver config file, the type will propogate.</p>
+
+</article>
+        </div>
+        <footer>
+            <p>Copyright 2013 - 2016 &copy; Tom Ashley</p>
+        </footer>
+        <script src="http://tomashley.github.io/js/highlight-9.0.0.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-42095920-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+    </body>
+</html>

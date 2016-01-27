@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://tomashley.github.io/</loc>
+    <lastmod>2016-01-27T21:56:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tomashley.github.io/2016/01/27/awesomewm/</loc>
+    <lastmod>2016-01-27T21:56:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomashley.github.io/about/</loc>
+    <lastmod>2016-01-13T21:32:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/</loc>
+    <lastmod>2013-07-18T14:06:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomashley.github.io/2013/07/17/kibana-3/</loc>
+    <lastmod>2013-07-17T00:23:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/</loc>
+    <lastmod>2013-07-01T14:06:31+00:00</lastmod>
+  </url>
+  
+</urlset>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tomashley</title>
+    <link>http://tomashley.github.io/</link>
+    <description>Recent content on tomashley</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 27 Jan 2016 21:56:58 +0000</lastBuildDate>
+    <atom:link href="http://tomashley.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Awesome Window Manager</title>
+      <link>http://tomashley.github.io/2016/01/27/awesomewm/</link>
+      <pubDate>Wed, 27 Jan 2016 21:56:58 +0000</pubDate>
+      
+      <guid>http://tomashley.github.io/2016/01/27/awesomewm/</guid>
+      <description>
+
+&lt;h1 id=&#34;kanji:6d9d7cd33607228b1da0364ee73d0c7e&#34;&gt;Kanji&lt;/h1&gt;
+
+&lt;p&gt;When people look over my shoulder, or do some work with me on my laptop, I am always asked about the Japanese/Chinese pictograms on the top left of my screen:&lt;/p&gt;
+
+&lt;p align=center&gt;
+&lt;img src=/images/awesome_desktops.png&gt;
+&lt;br /&gt;Kanji
+&lt;/p&gt;
+
+&lt;p&gt;These are the 10 workspaces I have available to me. I had to do a little research on them, and I think they are Chinese or Japanese number characters.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wiktionary.org/wiki/%E4%B9%9D&#34;&gt;九&lt;/a&gt; - for example is Chinese Number 9, or Japanese Kanji 9&lt;/p&gt;
+
+&lt;p&gt;The reason I don&amp;rsquo;t know what they are, is because I copied them from someone else&amp;rsquo;s &lt;code&gt;rc.lua&lt;/code&gt; for AwesomeWM. What I will say though, is that they look better than the English numbers 0-9.&lt;/p&gt;
+
+&lt;h1 id=&#34;a-brief-history:6d9d7cd33607228b1da0364ee73d0c7e&#34;&gt;A Brief History&lt;/h1&gt;
+
+&lt;p&gt;About 10 years ago, I was getting dispirited with all Desktop Environments (DE) and Window Managers (WM). I&amp;rsquo;d fully flipped from dual booting with Windows and made Linux take over my entire machine. This was around the time Gnome was moving from v2 to v3, if I remember correctly, and I was none too impressed with their excessive use of Compiz and losing the &amp;lsquo;traditional&amp;rsquo; start menu bar. Basically, things were changing and I didn&amp;rsquo;t like it. Also, KDE was never my bag; GTK has always looked better to me than Qt.&lt;/p&gt;
+
+&lt;p&gt;So, I was looking for a decent UI to work on. I wanted it to be lightweight with the ability to run VMware for a Windows virtual machine (I was tied into Outlook and some other Microsoft tools). XFCE and LXDE kept popping up. I tried them both, but neither ever felt quite right. I think I stopped on LXDE the longest. I even tried out Enlightenment 17 and 18!&lt;/p&gt;
+
+&lt;p&gt;Xmonad was getting a lot of attention on ArchLinux and looked like fun. I tried it and I failed to make anything decent. It was beyond my capabilities.&lt;/p&gt;
+
+&lt;p&gt;So then I get a new Ops gig with some guys who know what they are doing. I try and stick at Xmond for a bit, and then one of them passed me their &lt;code&gt;rc.lua&lt;/code&gt; for Awesome, told me the basic shortcuts to jump windows, re-tile and switch workspaces. Suddenly things made sense and I persevered.&lt;/p&gt;
+
+&lt;h1 id=&#34;tiling:6d9d7cd33607228b1da0364ee73d0c7e&#34;&gt;Tiling&lt;/h1&gt;
+
+&lt;p&gt;AwesomeWM is a tiling window manager. It is not like your usual desktop environment. There are no integrations out of the box and the default config is rather basic.&lt;/p&gt;
+
+&lt;p&gt;What AwesomeWM does, which makes it so productive, is it allows you to make the best use of your available screen estate, whilst allowing you to not need your mouse to jump around windows.&lt;/p&gt;
+
+&lt;p&gt;I use the mouse more than I should for this window manager, but, one key productivity feature is the ability to run quite a few terminal sessions on one workspace and have them arranged in equal sizes.&lt;/p&gt;
+
+&lt;p&gt;I currently have 13 different ways of arranging windows, from vertical and horizontal splits, to floating and spirals.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://tomashley.github.io/images/awesome_7windows.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Arranging 7 Windows&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;As you can see, laying out 7 windows, above, uses every inch of my screen apart from a small bar top and bottom to tell the time, which workspace I&amp;rsquo;m on and a few system monitor bars.&lt;/p&gt;
+
+&lt;p&gt;Your fingers rarely need to leave the keyboard when working with windows. Using the Mod4 keys and various vim-style key-bindings, jumping between windows is as simple as jumping workspaces.&lt;/p&gt;
+
+&lt;h1 id=&#34;keyboard-shortcuts:6d9d7cd33607228b1da0364ee73d0c7e&#34;&gt;Keyboard Shortcuts&lt;/h1&gt;
+
+&lt;p&gt;Mod4 is the key to all AwesomeWM key strokes. Often labelled as the &amp;lsquo;Windows&amp;rsquo; key on most keyboards, you can use &lt;code&gt;xev&lt;/code&gt; to see the keycode your button makes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;KeyPress event, serial 33, synthetic NO, window 0x4c00001,
+    root 0xd7, subw 0x0, time 666921407, (880,314), root:(881,331),
+    state 0x10, keycode 133 (keysym 0xffeb, Super_L), same_screen YES,
+    XLookupString gives 0 bytes: 
+    XmbLookupString gives 0 bytes: 
+    XFilterEvent returns: False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This on my machine is the Super Left (Super_L) key used as a modifier (mod4)&lt;/p&gt;
+
+&lt;p&gt;With that working, let&amp;rsquo;s just go and list the really important keys that make moving around windows and workspaces easy. These are the ones I use most frequently&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Mod4 + 1  - Switch to workspace 1. Replace 1 with 0-9 to hit up all workspaces
+Mod4 + j  - Jump to the next window
+Mod4 + k  - Jump to the previous window
+Mod4 + f  - set window fullscreen
+Mod4 + Return - Spawn a terminal emulator
+Mod4 + Space  - switch workspace layout
+Mod4 + Escape - Jump between workspace and previous workspace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;independent-desktops:6d9d7cd33607228b1da0364ee73d0c7e&#34;&gt;Independent Desktops&lt;/h1&gt;
+
+&lt;p&gt;One final feature that I often take for granted is the independence of workspaces. When adding an external monitor to your laptop, or simply having two screens on your workspace, AwesomeWM treats both screen separately so you effectively double your number of workspaces!&lt;/p&gt;
+
+&lt;p&gt;Where on one you have 10, add another screen, get another 10 workspaces.&lt;/p&gt;
+
+&lt;p&gt;As you switch between them with your &lt;code&gt;Mod4+{0..9}&lt;/code&gt; the left screen switches and the right one doesn&amp;rsquo;t. Move to the right screen and set it workspace 5 and the left one doesn&amp;rsquo;t change.&lt;/p&gt;
+
+&lt;h1 id=&#34;in-summary:6d9d7cd33607228b1da0364ee73d0c7e&#34;&gt;In Summary&lt;/h1&gt;
+
+&lt;p&gt;From my twitter feed, I see many proponents of the i3 window manager as some people reject OSX as their work horses (well done!). I have not used i3 yet, and don&amp;rsquo;t fully know it&amp;rsquo;s capabilities. I should take a look and see if it offers anything over AwesomeWM.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve now been using AwesomeWM for so long, using anything else becomes painful and difficult. It makes me productive; I can have things open across 10 workspaces, switch to them quickly, tile windows side by side for comparison or quickly full screen a terminal session to zoom in.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://tomashley.github.io/about/</link>
+      <pubDate>Wed, 13 Jan 2016 21:32:43 +0000</pubDate>
+      
+      <guid>http://tomashley.github.io/about/</guid>
+      <description>&lt;p&gt;My name is Tom Ashley and I am a Systems Administrator.&lt;/p&gt;
+
+&lt;p&gt;I currently work for a cloud service and spend my days applying DevOps methodologies to automating and simplifying my work.&lt;/p&gt;
+
+&lt;p&gt;This blog will will document some of the more interesting technical problems I overcome [1]&lt;/p&gt;
+
+&lt;p&gt;[1]: there may also be some ranty angry content&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Logstash @types and Beaver</title>
+      <link>http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/</link>
+      <pubDate>Thu, 18 Jul 2013 14:06:31 +0000</pubDate>
+      
+      <guid>http://tomashley.github.io/2013/07/18/logstash-types-and-beaver/</guid>
+      <description>
+
+&lt;p&gt;Something I came across last night has tripped me up a few times and I hadn&amp;rsquo;t really noticed because I&amp;rsquo;d never really dived into it.&lt;/p&gt;
+
+&lt;h3 id=&#34;brief-overview:a0487b70816355145b14edf0874c875a&#34;&gt;Brief overview&lt;/h3&gt;
+
+&lt;p&gt;My setup at the moment consists of two &lt;a href=&#34;logstash.net&#34;&gt;Logstash&lt;/a&gt; servers. One receives logs from my production nodes and one from my development environments. Logs are shipped via &lt;a href=&#34;https://github.com/josegonzalez/beaver&#34;&gt;Beaver&lt;/a&gt; to a Redis queue. They do share the same Elasticsearch cluster, but I separate them here by putting them in different indexes.&lt;/p&gt;
+
+&lt;p&gt;Initially, when I started out using Kibana (v2 on Ruby) I had single node all encompassing redis/logstash/elasticsearch. So when I grew up and got an ES cluster, I pushed the logs to separate indexes and it stuck.&lt;/p&gt;
+
+&lt;p&gt;Development is very transient and nodes and environment names change rapidly during development and QA cycles, so splitting the environments makes sense splitting out prod to a separate Logstash process.&lt;/p&gt;
+
+&lt;p&gt;I am also able to test new groks, filters and mutations without affecting production collection.&lt;/p&gt;
+
+&lt;h3 id=&#34;so-to-types:a0487b70816355145b14edf0874c875a&#34;&gt;So to @types&lt;/h3&gt;
+
+&lt;p&gt;We are developing some new capabilities in my workplace and that means a new environment, with a new software stack.&lt;/p&gt;
+
+&lt;p&gt;I want to split the logs from this new stack into their own Elasticsearch Index, but I don&amp;rsquo;t much want to run up another Logstash server, so I&amp;rsquo;m reusing my development instance.&lt;/p&gt;
+
+&lt;p&gt;Trying to be clever, and knowing the Redis input takes a &amp;lsquo;type&amp;rsquo; field, I&amp;rsquo;ve decided to ship logs to a different list name on Redis and placing these logs under a different @type.&lt;/p&gt;
+
+&lt;p&gt;Great.&lt;/p&gt;
+
+&lt;p&gt;Or not.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://logstash.net/docs/1.1.13/inputs/redis&#34;&gt;Logstash docs for Redis&lt;/a&gt; state:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you try to set a type on an event that already has one (for example when you send an event from a shipper to an indexer) then a new input will not override the existing type. A type set at the shipper stays with that event for its life even when sent to another LogStash server.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Well at the Beaver end I&amp;rsquo;m not actually setting a type before I ship.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-big-reveal:a0487b70816355145b14edf0874c875a&#34;&gt;The big reveal&lt;/h3&gt;
+
+&lt;p&gt;Some well placed tcpdumping to watch what was leaving the node reveals that Beaver was setting a tag - &amp;lsquo;file&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;So now, so long as I ensure I set the @type in my Beaver config file, the type will propogate.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kibana 3</title>
+      <link>http://tomashley.github.io/2013/07/17/kibana-3/</link>
+      <pubDate>Wed, 17 Jul 2013 00:23:51 +0000</pubDate>
+      
+      <guid>http://tomashley.github.io/2013/07/17/kibana-3/</guid>
+      <description>&lt;p&gt;Tonight I finally got my first preview of a working Kibana 3.&lt;/p&gt;
+
+&lt;p&gt;I tried running up a Vagrant box using the new &lt;a href=&#34;https://github.com/lusis/chef-kibana&#34;&gt;Kibana 3 Chef cookbook&lt;/a&gt; from Lusis&lt;/p&gt;
+
+&lt;p&gt;The issue with this was I forwarded port 80 in VirtualBox to 8080 on my Host.
+I&amp;rsquo;m not sure whether Nginx or the Angular code in Kibana was dropping the port, but I could not list the _aliases route to proxied Elasticsearch because the port was dropping.&lt;/p&gt;
+
+&lt;p&gt;To get it to work I was forced to proxy Elasticsearch from my host on port 80.&lt;/p&gt;
+
+&lt;p&gt;It was a hack job, but gave me the preview I needed. Kibana 3 looks awesome, so I will now move it into production!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DropWizard and Graphite</title>
+      <link>http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/</link>
+      <pubDate>Mon, 01 Jul 2013 14:06:31 +0000</pubDate>
+      
+      <guid>http://tomashley.github.io/2013/07/01/drop-wizard-and-graphite/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;m working on a new project at work, and we seem to have fallen on &lt;a href=&#34;http://dropwizard.codahale.com/&#34;&gt;DropWizard&lt;/a&gt; as the back-end of choice for building our service.&lt;/p&gt;
+
+&lt;p&gt;This is very nice, because it affords a metrics service as a viewport into the embedded Jetty engine and with various JVM metrics and the ability to time and count individual Java methods.&lt;/p&gt;
+
+&lt;p&gt;I have written a metrics scraper that pulls the DropWizard JSON metrics, flattens them and pushes them up into Graphite.&lt;/p&gt;
+
+&lt;p&gt;There are many &lt;a href=&#34;http://graphite.wikidot.com/&#34;&gt;Graphite&lt;/a&gt; front-ends out there, and I have tried a few. None quite fit my bill, and almost all need an amount of manual customisation I&amp;rsquo;m uncomfortable with. I&amp;rsquo;d like more automation.
+I know this is quite hard as everyone has different metrics and different paths under which they are stored.&lt;/p&gt;
+
+&lt;p&gt;My other bug-bear is that most are written in Ruby. I do like ruby for certain tasks, but I am not a fan of Gems and the version mismatches I always stumble on when I write on a laptop with Ruby 2+ and have to back-port for a CentOS server on 1.8.7!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.opscode.com/&#34;&gt;Opscode&lt;/a&gt; have done brilliant things with Chef Omnibus to overcome such annoyances.&lt;/p&gt;
+
+&lt;h3 id=&#34;python:7aa9a79982d80df5ac2a5131a833fb48&#34;&gt;Python&lt;/h3&gt;
+
+&lt;p&gt;So my plan is to try and knock up something a little more custom for myself using Flask as a caching server to Graphite&amp;rsquo;s list of JSON metrics, and attempt a cubism.js style graphing front-end.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see how I get on!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
